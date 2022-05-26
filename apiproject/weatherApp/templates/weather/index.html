@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        b{
+            color:green;
+        }
+        input {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-color: green;
+        }
+        button{
+            color : green;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>Weather Information for Any City</b></h2>
+    <form method="POST">{% csrf_token %}
+        <input type="text" placeholder="Enter your city" name="city">
+        <button type="submit"><b>Enter the button</b></button>
+    </form>
+    <h1><b>Description : </b>{{description}}</h1>
+    <h1><b>Icon        : </b>{{icon}}</h1> 
+    <h1><b>Temperature : </b>{{temp}}</h1>
+    <h1><b>Date        : </b>{{day}}</h1>
+    <h1><b>City        : </b>{{city}}</h1>
+
+</body>
+</html>
